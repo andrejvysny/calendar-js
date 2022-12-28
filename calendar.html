@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calendar</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        .content-box {
+            max-width: 650px;
+            margin: auto !important;
+            padding: 30px;
+        }
+
+        .row {
+            width: 100% !important;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: black;
+            font-weight: 200;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #1b1e21;
+            font-weight: 500;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        .mb-5 {
+            margin-bottom: 3rem !important;
+        }
+
+        .mt-5 {
+            margin-top: 3rem !important;
+        }
+
+        .mt-4 {
+            margin-top: 2.5rem !important;
+        }
+
+        .mt-3 {
+            margin-top: 2rem !important;
+        }
+
+        .mt-2 {
+            margin-top: 1.5rem !important;
+        }
+
+        .mt-1 {
+            margin-top: 1rem !important;
+        }
+
+        .text-center {
+            text-align: center !important;
+        }
+
+        .code {
+            padding: 25px;
+            background-color: #1b1e21;
+            color: rgba(240, 240, 240, 1);
+            width: fit-content;
+            margin: auto;
+            text-align: left;
+        }
+
+        .code code {
+            white-space: normal;
+            word-break: normal;
+        }
+
+        article p {
+            font-weight: 400;
+            font-size: 1rem;
+        }
+
+        article ul li {
+            padding: 10px 0;
+            text-align: left;
+            font-size: 0.95rem;
+            line-height: 1.1rem;
+            font-family: Arial, sans-serif;
+        }
+
+        article ul li span.main {
+            font-size: 1rem;
+            padding: 2px 5px;
+            border-radius: 5px;
+            background-color: #eaf3f7;
+            font-family: monospace;
+        }
+
+        article ul li span.default {
+            font-size: .95rem;
+            color: #666666;
+            background: none;
+            margin: 6px 0 0 3rem;
+            display: block;
+        }
+
+        /* COLORS */
+
+        .orange {
+            color: darkorange;
+        }
+
+        .blue {
+            color: #6abaff;
+        }
+
+        .grey {
+            color: grey;
+        }
+
+        .green {
+            color: #5dd400;
+        }
+
+        .violet {
+            color: #d264ff;
+        }
+
+        .yellow {
+            color: #f1e00f;
+        }
+
+
+        footer {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px 0 40px;
+            font-size: 1rem;
+        }
+
+    </style>
+    <link href="calendar.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<div class="row">
+    <div id="root"></div>
+</div>
+
+<div class="content-box">
+    <div class="row text-center">
+        <h1 class="mb-5">Calendar Docs</h1>
+        <article>
+            <p>Copy JavaScript for Calendar.</p>
+            <p>Add CDN to your code above Calendar rendering script.</p>
+        </article>
+        <div class="code">
+            <code>
+                <span class="yellow">&lt;script</span> src=<span class="green">"https://www.andrejvysny.online/widgets/calendar/calendar.js"</span><span
+                    class="yellow">&gt;</span> <span class="yellow">&lt;/script&gt;</span>
+            </code>
+        </div>
+        <article>
+            <p>Add Calendar style to your code in head.</p>
+        </article>
+        <div class="code">
+            <code>
+                <span class="yellow">&lt;link</span> src=<span class="green">"https://www.andrejvysny.online/widgets/calendar/calendar.css"</span> rel=<span class="green">"stylesheet"</span> type=<span class="green">"text/css"</span><span
+                    class="yellow">&gt;</span>
+            </code>
+        </div>
+        <article class="mt-5">
+            <p>Render your calendar.</p>
+        </article>
+        <pre class="code">
+            <code>
+                <span class="orange">new</span> Calendar({
+                    <span class="violet">root</span>: <span class="green">'root'</span><span class="orange">,</span>
+                })<span class="orange">;</span>
+                <!--
+                <span class="orange">new&nbsp;</span>Calendar({<br>
+                <span class="violet">&nbsp;&nbsp;&nbsp;&nbsp;root</span>:&nbsp;<span class="green">'root'</span>,<span
+                    class="grey">&nbsp;&nbsp;&nbsp;// Your render target ID</span> <br>
+                <span class="grey">&nbsp;&nbsp;&nbsp;&nbsp;// your options</span><br>
+                })<span class="orange">;</span>-->
+            </code>
+        </pre>
+        <h3>Options</h3>
+        <article>
+
+            <ul>
+                <li><span class="main">days</span> - names for days in week.
+                    <span class="default">default: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']</span>
+                </li>
+                <li><span class="main">months</span> - names for months in year.
+                    <span class="default">default: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']</span>
+                </li>
+                <li><span class="main">renderLast</span> - render cells after last date to complete Calendar table.
+                    <span class="default">default: true</span>
+                </li>
+                <li><span class="main">autoInit</span> - automatic Calendar initialization after creating.
+                    <span class="default">default: true</span>
+                </li>
+                <li><span class="main">initMonth</span> - month showed after initialization.
+                    <span class="default">default: *current Month</span>
+                </li>
+                <li><span class="main">initYear</span> - year showed after initialization.
+                    <span class="default">default: *current Year</span>
+                </li>
+                <li><span class="main">selectable</span> - allow you to select date in calendar by adding attribute "selected" to selected date.
+                    <span class="default">default: false</span>
+                </li>
+                <li><span class="main">minDate</span> - set minimum showed day (erlier dates are disabled). Enter date in "2020-7-22" format or for today's date "today".
+                    <span class="default">default: null</span>
+                </li>
+                <li><span class="main">maxDate</span> -  set maximum showed day (later dates are disabled). Enter date in "2020-7-22" format or for today's date "today".
+                    <span class="default">default: null</span>
+                </li>
+            </ul>
+
+        </article>
+
+
+        <h3>Functions</h3>
+        <article>
+            <ul>
+                <li><span class="main">init()</span> - Initialize calendar (use if autoInit is set to false).
+                    <div class="code mt-1">
+                        <code>
+                            <span class="orange">let</span>&nbsp;calendar&nbsp;=&nbsp;<span
+                                class="orange">new&nbsp;</span>Calendar({<br>
+                            <span class="violet">&nbsp;&nbsp;&nbsp;&nbsp;root</span>:&nbsp;<span
+                                class="green">'root'</span>, <br>
+                            <span class="violet">&nbsp;&nbsp;&nbsp;&nbsp;autoInit</span>:&nbsp;<span
+                                class="green">false</span>, <br>
+                            })<span class="orange">;</span><br><br>
+                            calendar.<span class="yellow">init</span>()<span class="orange">;</span> <span class="grey">// Now you will initialize calendar.</span>
+                        </code>
+                    </div>
+                </li>
+
+                <li><span class="main">updateMonth()</span> - switch Calendar to entered month and year.
+                    <div class="code mt-1">
+                        <code>
+                            <span class="orange">let</span>&nbsp;calendar&nbsp;=&nbsp;<span
+                                class="orange">new&nbsp;</span>Calendar({<br>
+                            <span class="violet">&nbsp;&nbsp;&nbsp;&nbsp;root</span>:&nbsp;<span
+                                class="green">'root'</span> <br>
+
+                            })<span class="orange">;</span><br><br>
+                            <span class="grey">// Now you will change month in calendar to April and year to 2020.</span><br>
+                            calendar.<span class="yellow">updateMonth</span>(<span class="blue">2020</span><span
+                                class="orange">,</span><span class="blue">4</span>)<span class="orange">;</span>
+                        </code>
+                    </div>
+                </li>
+            </ul>
+        </article>
+    </div>
+
+</div>
+
+<footer>
+    Copyright &#169; 2020 Andrej Vyšný
+</footer>
+<script src="calendar.js"></script>
+<script>
+    let minDate = `${new Date().getFullYear()}-${new Date().getMonth()}-15`;
+    console.log(minDate);
+    let calendar = new Calendar({
+        root: 'root',
+        selectable: true,
+        minDate: minDate,
+    });
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+.calendar button {
+    border: none;
+    border-radius: 10px;
+    background-color: #eef0f8;
+    color: black;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 0 20px;
+    box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.16);
+    cursor: pointer;
+}
+
+.calendar button:hover {
+    background-color: #dbecfe;
+}
+
+.calendar button:focus {
+    outline: none;
+}
+
+.calendar button[disabled] {
+    box-shadow: none;
+    background-color: rgba(220, 220, 230, .15);
+    color: lightgray;
+    cursor: unset;
+}
+
+.calendar div {
+    padding: 20px 10px;
+    margin: auto;
+    width: fit-content;
+}
+
+.calendar div .year,
+.calendar div .month {
+    display: inline-block;
+    min-width: 60px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+.calendar table {
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.calendar table td {
+    height: 90px;
+    width: 90px;
+    border: 2px solid #fff;
+    padding: 5px 10px;
+    text-align: left;
+    vertical-align: top;
+    background-color: rgba(220, 220, 230, .15);
+}
+
+.calendar table td[calendar-date]:not([disabled]) {
+    background-color: #eef0f8;
+}
+
+.calendar table[selectable="true"] td[calendar-date]:not([disabled]) {
+    cursor: pointer;
+}
+
+.calendar table td[calendar-date]:not([disabled]).today {
+    font-weight: 900;
+    background-color: rgba(228, 8, 255, .23) !important;
+}
+
+.calendar table td[calendar-date]:not([disabled]).weekend {
+    background-color: #dbecfe;
+    font-weight: 900;
+}
+
+.calendar table td[selected]:not([disabled]) {
+    outline: 2px solid #00adff;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.36);
+}
+
+.calendar table td[disabled] {
+    background-color: rgba(220, 220, 230, .15);
+    color: lightgrey;
+}
+
+.calendar table * {
+    box-sizing: border-box;
+}
